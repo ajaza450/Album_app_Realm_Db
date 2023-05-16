@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tn2-Hi-9X0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="TaskMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-Tv-0WJ">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0NP-aE-RA2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="L3X-Hl-AAs"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="FBb-z7-N1J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FBb-z7-N1J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5XD-P7-gWR"/>
+                            <constraint firstItem="0UZ-Tv-0WJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vO-UG-Vka"/>
+                            <constraint firstItem="FBb-z7-N1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="E2G-xS-epn"/>
+                            <constraint firstItem="0UZ-Tv-0WJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HIE-Pj-9lZ"/>
+                            <constraint firstItem="FBb-z7-N1J" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iU1-ZQ-Jd1"/>
+                            <constraint firstItem="0UZ-Tv-0WJ" firstAttribute="top" secondItem="FBb-z7-N1J" secondAttribute="bottom" constant="5" id="j0V-8v-OTJ"/>
+                            <constraint firstItem="0UZ-Tv-0WJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="plG-23-RVT"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="TwX-WS-ZQs"/>
+                    <connections>
+                        <outlet property="searchBar" destination="FBb-z7-N1J" id="lYR-1l-0bi"/>
+                        <outlet property="tableView" destination="0UZ-Tv-0WJ" id="eqY-TI-LfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865.217391304348" y="105.80357142857143"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Wvz-QA-Qml">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tn2-Hi-9X0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L0F-0d-zAU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="YwP-W0-kIX"/>
+                        <segue destination="gnL-gf-qPZ" kind="relationship" relationship="viewControllers" id="PHE-Yj-NxH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hwm-sI-YEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="105.80357142857143"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="z9D-lk-aA2">
+            <objects>
+                <viewController id="gnL-gf-qPZ" customClass="FavoritesVC" customModule="TaskMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rfo-mO-710">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WjF-9i-fXm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gnL-gf-qPZ" id="C01-6O-3uR"/>
+                                    <outlet property="delegate" destination="gnL-gf-qPZ" id="Fcu-GN-JJw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gEV-nK-w7a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WjF-9i-fXm" firstAttribute="leading" secondItem="gEV-nK-w7a" secondAttribute="leading" id="1t6-kP-O2L"/>
+                            <constraint firstItem="WjF-9i-fXm" firstAttribute="bottom" secondItem="gEV-nK-w7a" secondAttribute="bottom" id="9HE-xy-dDl"/>
+                            <constraint firstItem="WjF-9i-fXm" firstAttribute="top" secondItem="rfo-mO-710" secondAttribute="top" id="eOM-yK-ixm"/>
+                            <constraint firstItem="gEV-nK-w7a" firstAttribute="trailing" secondItem="WjF-9i-fXm" secondAttribute="trailing" id="jec-bk-5fF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="IfI-AY-vSM"/>
+                    <connections>
+                        <outlet property="tableView" destination="WjF-9i-fXm" id="ES4-7n-YfT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AqB-UK-pux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195.6521739130435" y="840.40178571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

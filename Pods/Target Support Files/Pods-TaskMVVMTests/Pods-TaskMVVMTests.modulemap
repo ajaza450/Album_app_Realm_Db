@@ -1,0 +1,6 @@
+framework module Pods_TaskMVVMTests {
+  umbrella header "Pods-TaskMVVMTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
